@@ -8,17 +8,6 @@ var app = {
         }
     },
 
-
-    initialize: function() {
-        var self = this;
-        this.store = new MemoryStore(function() {
-            $('body').html(new HomeView(self.store).render().el);
-        });
-
-        registerEvents();
-
-    },
-
     registerEvents: function() {
         var self = this;
         // Check of browser supports touch events...
@@ -39,7 +28,20 @@ var app = {
                 $(event.target).removeClass('tappable-active');
             });
         }
+    },
+
+
+    initialize: function() {
+        var self = this;
+        this.store = new MemoryStore(function() {
+            $('body').html(new HomeView(self.store).render().el);
+        });
+
+        this.registerEvents();
+
     }
+
+    
 
 };
 
