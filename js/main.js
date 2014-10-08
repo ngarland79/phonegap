@@ -39,6 +39,10 @@ var app = {
 
         this.registerEvents();
 
+        document.addEventListener('deviceready', function() {
+          navigator.splashscreen.hide();
+        });
+
     }
 
     
