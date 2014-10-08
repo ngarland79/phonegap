@@ -45,4 +45,8 @@ var app = {
 
 };
 
+document.addEventListener('deviceready', function() {
+  navigator.splashscreen.hide();
+});
+
 app.initialize();
