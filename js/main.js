@@ -1,27 +1,5 @@
 var app = {
 
-    initialize: function() {
-        var self = this;
-        this.store = new MemoryStore(function() {
-            $('body').html(new HomeView(self.store).render().el);
-        });
-
-        this.registerEvents();
-
-        document.addEventListener('deviceready', function() {
-          navigator.splashscreen.hide();
-        });
-
-    },
-
-    showAlert: function (message, title) {
-        if (navigator.notification) {
-            navigator.notification.alert(message, null, title, 'OK');
-        } else {
-            alert(title ? (title + ": " + message) : message);
-        }
-    },
-
     registerEvents: function() {
         var self = this;
         // Check of browser supports touch events...
@@ -42,17 +20,24 @@ var app = {
                 $(event.target).removeClass('tappable-active');
             });
         }
+    },
+
+    showAlert: function (message, title) {
+        if (navigator.notification) {
+            navigator.notification.alert(message, null, title, 'OK');
+        } else {
+            alert(title ? (title + ": " + message) : message);
+        }
+    },
+
+    initialize: function() {
+        var self = this;
+        this.registerEvents();
+        this.store = new MemoryStore(function() {
+            $('body').html(new HomeView(self.store).render().el);
+        });
     }
 
-
-
-
-    
-
 };
-
-document.addEventListener('deviceready', function() {
-  navigator.splashscreen.hide();
-});
 
 app.initialize();
