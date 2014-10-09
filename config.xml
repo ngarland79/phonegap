@@ -26,8 +26,5 @@
     <feature name="SplashScreen">
         <param name="ios-package" value="CDVSplashScreen"/>
     </feature>
-
-    <preference value="true" name="auto-hide-splash-screen"/>
-    <preference name="AutoHideSplashScreen" value="true" />
  
 </widget>

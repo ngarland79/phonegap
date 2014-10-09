@@ -24,5 +24,19 @@
 <script src="js/HomeView.js"></script>
 <script src="js/main.js"></script>
 
+<script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        navigator.splashscreen.hide();
+    }
+
+</script>
+
 </body>
 </html>
