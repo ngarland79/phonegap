@@ -23,11 +23,11 @@
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
 
-    <!-- Do not auto hide splash on iOS -->
-    <preference name="AutoHideSplashScreen" value="false" />
-    <!-- Do not auto hide splash on Android -->
-    <preference name="SplashScreenDelay" value="10000"/>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen"/>
+    </feature>
 
-    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <preference value="true" name="auto-hide-splash-screen"/>
+    <preference name="AutoHideSplashScreen" value="true" />
  
 </widget>
